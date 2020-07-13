@@ -1,0 +1,89 @@
+{
+	"info": {
+		"_postman_id": "4dde7242-ccc3-4aaa-9664-8f30af2360c1",
+		"name": "ExchangeApp Requests Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create user",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"TEST\",\n\t\"surname\": \"TEST\",\n\t\"pesel\": \"11111111111\",\n\t\"plnBalance\": 2500\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": ""
+				},
+				"description": "Creating new user"
+			},
+			"response": []
+		},
+		{
+			"name": "Exchange money",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"from\": \"PLN\",\n\t\"to\": \"USD\",\n\t\"idUser\": \"1\",\n\t\"value\": 500\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/user/exchange",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"exchange"
+					]
+				},
+				"description": "Exchanging money from PLN (amount - 500) to USD for idUsre = 1"
+			},
+			"response": []
+		},
+		{
+			"name": "Show user details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/user/userDetails/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"userDetails",
+						"1"
+					]
+				},
+				"description": "Showing user details for idUser = 1"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
